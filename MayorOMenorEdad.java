@@ -8,7 +8,7 @@ public class MayorOMenorEdad {
             System.out.print("Digita tu edad: ");
             int edad = scanner.nextInt();
 
-            String msg = (edad > 17) ? "Eres mayor de edad" : "Eres menor de edad";
+            String msg = (edad > 17) ? "Eres mayor de edad" : "Eres menor de edad"; // another way to declare a decision
 
             System.out.println(msg);
 
