@@ -30,5 +30,10 @@ public class characters {
             k++;
         }
 
+        System.out.println("\n-----------------\n");
+
+        System.out.print( "hola, ¿como estas?".toUpperCase() );
+        System.out.println( "\nBIEN, GRACIAS.".toLowerCase() );
+
     } // main end
 } // characters class end
