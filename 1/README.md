@@ -4,11 +4,13 @@
 
 * The sentences end with ";".
 
-    ``` System.out.println("Hola Mundo !!!");```
+    ``` 
+    System.out.println("Hola Mundo !!!");
+    ```
 
 <br>
 
-* The Scanner class allows to read data throught the keyboard.
+* The Scanner class allows to read data through the keyboard.
 
 <br>
 
@@ -99,3 +101,16 @@ Java has three loop statements.
 
 * An array is a set of same type variables whose memory directions are contiguous and always start from 0.
 
+    ```
+    int arr[] = new int[10];
+    ```
+    Also we can build an n elements array
+    ```
+    int n = 10;
+    int arr[] = new int[n];
+    ```
+    An array is static. Once the size is definied, you can't add or remove elements in it.
+    To access an array element, we access it trough a subindex
+    ```
+    arr[5] = 123;
+    ```
