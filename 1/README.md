@@ -1,6 +1,4 @@
 # <center> Let's start coding </center>
----
-
 
 ## Introduction <br>
 
