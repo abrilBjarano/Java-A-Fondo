@@ -3,8 +3,8 @@ public class index_strings {
         
         String s = "Hola te kiero mucho";
 
-        int pos1 = s.indexOf('a');
-        int pos2 = s.lastIndexOf('e');
+        int pos1 = s.indexOf('a'); // position of the first 'a' in the string
+        int pos2 = s.lastIndexOf('e'); // position of the last 'e' in the string
         int pos3 = s.indexOf('x');
 
         System.out.println("\n----------\n");
