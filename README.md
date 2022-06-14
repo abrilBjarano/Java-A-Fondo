@@ -8,3 +8,5 @@ For each chapter there will be a README file with a summary (made by me) of it.
 I hope to improve my programming skills and learn a lot of new and interesting things.
 
 ***<3***
+
+![hacker_cat](https://user-images.githubusercontent.com/71378616/173519007-5f29e981-5993-40db-b805-521beb48e20f.png)
