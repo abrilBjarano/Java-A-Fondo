@@ -1,4 +1,4 @@
-# Java-A-Fondo
+# Java A Fondo
 #### Examples and projects from Java A Fondo 2da Edición.
 
 In this repository I'll be updating my examples and projects from Java A Fondo 2da Edición book.
