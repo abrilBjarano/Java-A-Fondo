@@ -475,7 +475,7 @@ The "Hola" string has 4 characters numbered between 0 and 3.
 
 * #### _split_ (method)
 
-    Another way to split strings into substrings we can use this method from _String_.
+    Another way to split strings into substrings is the method _String_.
 
     ```
     String s = "Juan|Marcos|Carlos|Matias";
@@ -494,6 +494,8 @@ The "Hola" string has 4 characters numbered between 0 and 3.
     s is an String object or a instance if this class.
 
     We can't use == to compare objects, bc actually we'll compare memory directions and not contents.
+
+    To actually compare its contents, we must use _equals_ method.
 
     ```
     if( s1.equals(s2) ){
