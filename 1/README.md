@@ -248,7 +248,7 @@ Total: 3 argumentos
 
 <br>
 
-## Strings
+## Strings (class)
 
 In java _String_ as data type doesn't exist, however, _String_ is a class and the strings turns out to be objects. The classes define the objects data type.
 
@@ -288,18 +288,16 @@ The "Hola" string has 4 characters numbered between 0 and 3.
     String s = "Hola";
     System.out.println( s.length() );
     ```
-<br>
 
-* #### Upper and lowercase
+* #### Upper and lowercase (method)
 
     ```
     String s = "Esto Es Una Cadena de caracteres";
     String sMayus = s.toUpperCase();
     String sMinus = s.toLowerCase();
     ```
-<br>
 
-* #### String index
+* #### String index (method)
 
     ```
     int pos1 = s.indexOf('C'); 
@@ -311,3 +309,194 @@ The "Hola" string has 4 characters numbered between 0 and 3.
     System.out.println(pos3);
     ```
     _indexOf_ method returns the first occurrence position of a character, and _lastIndexOf_ the last occurrence of the string. If the string doesn't have that character, then returns a negative value.
+
+    <br>
+
+    Works with substrings too.
+
+    ```
+    String s = "Un buen libro de Java, un buen material";
+
+    int pos1 = s.indexOf("buen"); // retorna 3
+    int pos2 = s.lastIndexOf("buen"); // returna 26 
+
+    System.out.println(pos1); 
+    System.out.println(pos2);
+    ````
+
+* #### Substrings (method)
+
+    _substring_ method is for obtain different string portions from the original.
+    The method can invoked with two or a single argument.
+
+    <br>
+
+    * A method is overloaded when we can invoked it with different quantities and/or different types of arguments.
+
+    ```
+    String s = "Esto Es Una Cadena de caracteres";
+
+    String s1 = s.substring(0,7);
+    String s2 = s.substring(8,11);
+
+    // toma desde el caracter 8 hasta el final
+    String s3 = s.substring(8);
+    ```
+* #### Prefixes and suffixes (method)
+
+    With _startWith_ and _endWith_ methods we can verify if a string start with a certain prefix and ends or ends with a certain suffix.
+
+    ```
+    String s = "Un buen libro de Java";
+
+    boolean b1 = s.startsWith("Un buen"); // true
+    boolean b2 = s.startsWith("A"); // false
+    boolean b3 = s.endsWith("Java"); // true 
+    boolean b4 = s.endsWith("Chau"); // false
+
+    System.out.println(b1); 
+    System.out.println(b2); 
+    System.out.println(b3); 
+    System.out.println(b4);
+    ```
+* #### _StringBuffer_ (class)
+
+    A string from this class can be mutable. The class provides methods through which we can insert new characters, delete some of them and change the contained characeters in the different string positions.
+
+    ```
+    String x = new StringBuffer().append("Hola ")
+                                 .append("Que Tal?");
+    ```
+
+    
+    Its content is stored always in the same variable.
+
+    Operations on it are synchronized.
+
+* #### Wrappers (classes)
+
+    Wrappers allow, among other  thins, to perform different conversions between strings and numbers, obtain numerical expressions in different bases, etc.
+
+    ```
+    // --- operaciones con el tipo int ---
+    int i = 43;
+    
+    // convierto de int a String
+    String sInt = Integer.toString(i);
+    
+    // convierto de String a int
+    int i2 = Integer.parseInt(sInt);
+    
+    // --- operaciones con el tipo double ---
+    double d = 24.2;
+    
+    // convierto de double a String
+    String sDouble = Double.toString(d);
+    
+    // convierto de String a double
+    double d2 = Double.parseDouble(sDouble);
+    ```
+
+    All these classes have the methods _parseX_ (type of data we want to parse it the string) and _toString_ method to convert the value into a string
+
+
+    | Type | Wrapper |
+    | ------|--------|
+    | byte | Byte |
+    | short | Short |
+    | char | Character |
+    | int | Integer |
+    | long | Long |
+    | float | Float |
+    | double | Double |
+    | boolean | Boolean |
+
+* #### Number bases
+
+    Java allows to express integer values 8 base and 16 base.
+
+    Prefix 0x to input a number 16 base.
+    Prefix 0 to input a numer 8 base.
+
+    ```
+    int i = 0x24ACF; // en decimal es 150223
+    System.out.println(i); // imprime 150223
+    
+    int j = 0537; // en decimal es 351
+    System.out.println(j); // imprime 351
+    ```
+
+    By using Integer class we can obtain binary, octal, hex and any other number base of a given integer.
+
+    ```
+    Scanner scanner=new Scanner(System.in);
+    System.out.print("Ingrese un valor entero: ");
+    int v = scanner.nextInt();
+    
+    System.out.println("Valor Ingresado: "+v);
+    System.out.println("binario = "+Integer.toBinaryString(v));
+    System.out.println("octal = "+Integer.toOctalString(v));
+    System.out.println("hexadecimal = "+Integer.toHexString(v));
+
+    System.out.print("Ingrese una base numerica: ");
+    int b = scanner.nextInt();
+
+    String sBaseN=Integer.toString(v,b);
+    System.out.println(v + " en base("+b+") = " + sBaseN);
+    ```
+* #### _StringTokenizer_ (class)
+
+    Using this class we can split a string into _tokens_ delimited by a separator.
+    A _token_ is a substring enclosed withinn the ocurrences of a certain character (in this case, "|").
+
+    ```
+    String s = "Juan|Marcos|Carlos|Matias";
+
+    tokens = { Juan, Marcos, Carlos, Matias }
+    ```
+
+    The route through the _tokens_ is _forward only_. That's, they can only go from the first to the last one. From left to rigth. It cannot have direct access to a particular _token_ and cannot go backwards to recover the previous _token_ either.
+
+    ```
+    String s = "Juan|Marcos|Carlos|Matias";
+    StringTokenizer st = new StringTokenizer(s,"|");
+
+    String tok;
+
+    while( st.hasMoreTokens() ){
+        tok = st.nextToken();
+        System.out.println(tok);
+    }
+    ```
+    The library _java.util.StringTokenizer;_ is required.
+
+    * _hasMoreTokens_ method cheks if there are more _tokens_ in the string.
+    * _nextToken_ method moves to the next _token_.
+
+* #### _split_ (method)
+
+    Another way to split strings into substrings we can use this method from _String_.
+
+    ```
+    String s = "Juan|Marcos|Carlos|Matias";
+    String[] tokens = s.split("[|]");
+    
+    for(int i=0; i<tokens.length; i++){
+        System.out.println(tokens[i]);
+    }
+    ```
+
+* #### String comparison
+
+    ```
+    String s = "Hola a todos !";
+    ```
+    s is an String object or a instance if this class.
+
+    We can't use == to compare objects, bc actually we'll compare memory directions and not contents.
+
+    ```
+    if( s1.equals(s2) ){
+        System.out.println("Son iguales");
+    }
+    ```
