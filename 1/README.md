@@ -1,5 +1,7 @@
 # <center> Let's start coding </center>
 
+Notes made by Abril M. Bejarano. 
+
 ## Introduction
 
 * The sentences end with " _;_ ".
