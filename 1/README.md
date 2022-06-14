@@ -202,3 +202,112 @@ The characters are integer number values, unlike the Strings which are objects.
 <br>
 
 * _char_ can't store negative values or values greater than 2^16-1.
+
+<br>
+
+## Escape sequences
+
+```
+\t – tabulador
+\n – salto de línea
+\" – comillas dobles
+\' – comillas simples
+\\ – barra
+```
+<br>
+
+## CMD args
+
+```
+public class EchoJava {
+    public static void main(String[] args) {
+
+    for(int i=0; i<args.length; i++) {
+    System.out.println(args[i]);
+    }
+    
+    System.out.println("Total: "+args.length+" argumentos");
+
+    }
+}
+````
+
+If we run the program from the CMD like this:
+
+```
+c:\> java EchoJava Hola que tal?
+```
+The output will be:
+
+```
+Hola
+que
+tal?
+Total: 3 argumentos
+```
+
+<br>
+
+## Strings
+
+In java _String_ as data type doesn't exist, however, _String_ is a class and the strings turns out to be objects. The classes define the objects data type.
+
+* An object is a variable which besides of containing info, has methods or functions necessary to manupilate it.
+
+<br>
+
+* A string represents a finit sequence from zero or more enumerated characteres starting from zero.
+The "Hola" string has 4 characters numbered between 0 and 3.
+
+    ```
+    String s = "Esta es mi cadena";
+
+    System.out.println( s.charAt(0) );
+    System.out.println( s.charAt(5) );
+    System.out.println( s.charAt(s.length()-1) );
+
+    char c;
+
+    for(int i=0; i<s.length(); i++) {
+        c = s.charAt(i);
+        System.out.println(i+" -> "+c);
+    }
+    ```
+<br>
+
+* _charAt_ method returns a _char_ character located in a given position.
+
+<br>
+
+* We must not confuse the _length()_ string method from the _length_ array atribute.
+
+    ```
+    char c[] = { 'H', 'o', 'l', 'a' };
+    System.out.println( c.length );
+
+    String s = "Hola";
+    System.out.println( s.length() );
+    ```
+<br>
+
+* #### Upper and lowercase
+
+    ```
+    String s = "Esto Es Una Cadena de caracteres";
+    String sMayus = s.toUpperCase();
+    String sMinus = s.toLowerCase();
+    ```
+<br>
+
+* #### String index
+
+    ```
+    int pos1 = s.indexOf('C'); 
+    int pos2 = s.lastIndexOf('C'); 
+    int pos3 = s.indexOf('x');
+
+    System.out.println(pos1);
+    System.out.println(pos2);
+    System.out.println(pos3);
+    ```
+    _indexOf_ method returns the first occurrence position of a character, and _lastIndexOf_ the last occurrence of the string. If the string doesn't have that character, then returns a negative value.
